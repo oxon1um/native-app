@@ -1,0 +1,21 @@
+services:
+  sage-native:
+    build:
+      context: .
+    image: ghcr.io/oxon1um/native-app:latest
+    ports:
+      - "${SAGE_NOVNC_HOST:-127.0.0.1}:${SAGE_NOVNC_PORT:-6080}:6080"
+    environment:
+      RESOLUTION: "${SAGE_RESOLUTION:-1280x800x24}"
+      VNC_PASSWORD: "${SAGE_VNC_PASSWORD:-}"
+    volumes:
+      - sage-data:/data
+    shm_size: "1gb"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  sage-data:
