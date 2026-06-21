@@ -2,7 +2,7 @@ services:
   sage-native:
     build:
       context: .
-    image: ghcr.io/oxon1um/native-app:latest
+    image: ghcr.io/oxon1um/sage-docker:latest
     ports:
       - "${SAGE_NOVNC_HOST:-127.0.0.1}:${SAGE_NOVNC_PORT:-6080}:6080"
     environment:

@@ -1,6 +1,6 @@
-# native-app
+# SAGE Docker
 
-This is the go native backend for the SAGE App.
+This is a Dockerized fork of the Go native backend for the SAGE App.
 
 ## Building
 
@@ -46,7 +46,7 @@ docker run --rm \
   -p 127.0.0.1:6080:6080 \
   -v sage-data:/data \
   --shm-size=1g \
-  ghcr.io/oxon1um/native-app:latest
+  ghcr.io/oxon1um/sage-docker:latest
 ```
 
 Set `SAGE_VNC_PASSWORD` when using Compose to require a VNC password:
